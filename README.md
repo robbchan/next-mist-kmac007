@@ -10,11 +10,11 @@
 
 ## PC预览
 
-<center>![PC预览](https://kmac007.b0.upaiyun.com/next-kmac007/pc.png)<center>
+<center><img src="https://kmac007.b0.upaiyun.com/next-kmac007/pc.png" alt="pc"/></center>
 
 ## 移动端预览
 
-<center>![移动端预览](https://kmac007.b0.upaiyun.com/next-kmac007/iphone6.gif)</center>
+<center><img src="https://kmac007.b0.upaiyun.com/next-kmac007/iphone6.gif" alt="iphon6"/></center>
 
 # 使用方法
 在终端窗口下，定位到Hexo站点目录下。
