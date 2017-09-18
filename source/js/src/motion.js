@@ -117,21 +117,21 @@ $(document).ready(function() {
       if ($(window).width() >= 1200 && location.pathname === '/') {
         this.toggleEl.trigger('click');
       }
-
+      var that = this
       //当可视窗口宽度监听可视窗口宽度的变化，执行对应操作
-      $(window).on('resize', () => {
+      $(window).on('resize', function() {
         if (
           $(window).width() < 1200 &&
           location.pathname === '/' &&
-          this.isSidebarVisible
+          that.isSidebarVisible
         ) {
-          this.toggleEl.trigger('click');
+          that.toggleEl.trigger('click');
         } else if (
           $(window).width() >= 1200 &&
           location.pathname === '/' &&
-          !this.isSidebarVisible
+          !that.isSidebarVisible
         ) {
-          this.toggleEl.trigger('click');
+          that.toggleEl.trigger('click');
         }
       });
     },
