@@ -1,25 +1,17 @@
 # ---------------------------------------------------------------
-# Theme Core Configuration Settings
-# ---------------------------------------------------------------
-
-# Set to true, if you want to fully override the default configuration.
-# Useful if you don't want to inherit the theme _config.yml configurations.
-override: false
-
-# ---------------------------------------------------------------
 # Site Information Settings
 # ---------------------------------------------------------------
 
 # Put your favicon.ico into `hexo-site/source/` directory.
-favicon: /favicon.ico
+favicon: favicon.ico
 
 # Set default keywords (Use a comma to separate)
-keywords: "Hexo, NexT"
+keywords: "前端,JavaScript,React,Redux,React-route,webpack,sass,Vue,Vuex,jQuery,Vscode,前端工程师"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
 # Set rss to specific value if you have burned your feed already.
-rss:
+rss: /atom.xml
 
 # Specify the date when the site was setup
 #since: 2015
@@ -41,7 +33,7 @@ copyright: true
 canonical: true
 
 # Change headers hierarchy on site-subtitle (will be main site description) and on all post/pages titles for better SEO-optimization.
-seo: false
+seo: true
 
 # If true, will add site-subtitle to index page, added in main hexo config.
 # subtitle: Subtitle
@@ -52,24 +44,32 @@ index_with_subtitle: false
 # Menu Settings
 # ---------------------------------------------------------------
 
-# When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash from link value (/archives -> archives).
-# Usage: `Key: /link/ || icon`
-# Key is the name of menu item. If translate for this menu will find in languages - this translate will be loaded; if not - Key name will be used. Key is case-senstive.
-# Value before `||` delimeter is the target link.
-# Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, question icon will be loaded.
+# When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash (/archives -> archives)
 menu:
-  home: / || home
-  #about: /about/ || user
-  #tags: /tags/ || tags
-  #categories: /categories/ || th
-  archives: /archives/ || archive
-  #schedule: /schedule/ || calendar
-  #sitemap: /sitemap.xml || sitemap
-  #commonweal: /404/ || heartbeat
+  home: /
+  categories: /categories/
+  about: /about/
+  archives: /archives/
+  tags: /tags/
+  #sitemap: /sitemap.xml
+  # commonweal: /404/
 
 # Enable/Disable menu icons.
+# Icon Mapping:
+#   Map a menu item to a specific FontAwesome icon name.
+#   Key is the name of menu item and value is the name of FontAwesome icon. Key is case-senstive.
+#   When an question mask icon presenting up means that the item has no mapping icon.
 menu_icons:
   enable: true
+  #KeyMapsToMenuItemKey: NameOfTheIconFromFontAwesome
+  home: home
+  about: user
+  categories: th
+  schedule: calendar
+  tags: tags
+  archives: archive
+  sitemap: sitemap
+  commonweal: heartbeat
 
 
 # ---------------------------------------------------------------
@@ -79,35 +79,43 @@ menu_icons:
 # Schemes
 # scheme: Muse
 scheme: Mist
-#scheme: Pisces
-#scheme: Gemini
+# scheme: Pisces
+# scheme: Gemini
 
 
 # ---------------------------------------------------------------
 # Sidebar Settings
 # ---------------------------------------------------------------
 
-# Social Links.
-# Usage: `Key: permalink || icon`
+# Social Links
 # Key is the link label showing to end users.
-# Value before `||` delimeter is the target permalink.
-# Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
-#social:
-  #GitHub: https://github.com/yourname || github
-  #E-Mail: mailto:yourname@gmail.com || envelope
-  #Google: https://plus.google.com/yourname || google
-  #Twitter: https://twitter.com/yourname || twitter
-  #FB Page: https://www.facebook.com/yourname || facebook
-  #VK Group: https://vk.com/yourname || vk
-  #StackOverflow: https://stackoverflow.com/yourname || stack-overflow
-  #YouTube: https://youtube.com/yourname || youtube
-  #Instagram: https://instagram.com/yourname || instagram
-  #Skype: skype:yourname?call|chat || skype
-
+# Value is the target link (E.g. GitHub: https://github.com/iissnan)
+social:
+  #LinkLabel: Link
+  GitHub: https://github.com/kmac007
+  微博: http://weibo.com/cdk93
+# Social Links Icons
+# Icon Mapping:
+#   Map a menu item to a specific FontAwesome icon name.
+#   Key is the name of the item and value is the name of FontAwesome icon. Key is case-senstive.
+#   When an globe mask icon presenting up means that the item has no mapping icon.
 social_icons:
   enable: true
   icons_only: false
-  transition: false
+  transition: true
+  # Icon Mappings.
+  # KeyMapsToSocialItemKey: NameOfTheIconFromFontAwesome
+  GitHub: github
+  E-Mail: envelope
+  Google: google
+  Twitter: twitter
+  FB Page: facebook
+  VK Group: vk
+  Skype: skype
+  YouTube: youtube
+  Instagram: instagram
+  StackOverflow: stack-overflow
+  微博: weibo
 
 # Blog rolls
 #links_title: Links
@@ -117,9 +125,9 @@ social_icons:
   #Title: http://example.com/
 
 # Sidebar Avatar
-# in theme directory(source/images): /images/avatar.gif
-# in site  directory(source/uploads): /uploads/avatar.gif
-#avatar: /images/avatar.gif
+# in theme directory(source/images): /images/avatar.jpg
+# in site  directory(source/uploads): /uploads/avatar.jpg
+avatar: /images/avatardk.jpg
 
 # Table Of Contents in the Sidebar
 toc:
@@ -140,7 +148,7 @@ toc:
 sidebar:
   # Sidebar Position, available value: left | right
   position: left
-  #position: right
+  # position: right
 
   # Sidebar Display, available value:
   #  - post    expand on posts automatically. Default.
@@ -163,7 +171,7 @@ sidebar:
   scrollpercent: false
 
   # Enable sidebar on narrow view
-  onmobile: false
+  onmobile: true
 
 
 # ---------------------------------------------------------------
@@ -196,8 +204,8 @@ post_meta:
 # Dependencies: https://github.com/willin/hexo-wordcount
 post_wordcount:
   item_text: true
-  wordcount: false
-  min2read: false
+  wordcount: true
+  min2read: true
   totalcount: false
   separated_meta: true
 
@@ -215,7 +223,7 @@ post_wordcount:
 
 # Declare license on posts
 post_copyright:
-  enable: false
+  enable: true
   license: CC BY-NC-SA 3.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/3.0/
 
@@ -243,7 +251,7 @@ custom_logo:
 # Available value:
 #    normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
-highlight_theme: normal
+highlight_theme: night eighties
 
 
 # ---------------------------------------------------------------
@@ -254,42 +262,33 @@ highlight_theme: normal
 # - Be aware that setting too much fonts will cause site running slowly
 # - Introduce in 5.0.1
 # ---------------------------------------------------------------
-# CAUTION! Safari Version 10.1.2 bug: https://github.com/iissnan/hexo-theme-next/issues/1844
-# To avoid space between header and sidebar in Pisces / Gemini themes recommended to use Web Safe fonts for `global` (and `logo`):
-# Arial | Tahoma | Helvetica | Times New Roman | Courier New | Verdana | Georgia | Palatino | Garamond | Comic Sans MS | Trebuchet MS
-# ---------------------------------------------------------------
 font:
-  enable: false
+  enable: true
 
-  # Uri of fonts host. E.g. //fonts.googleapis.com (Default).
+  # Uri of fonts host. E.g. //fonts.googleapis.com (Default)
   host:
-
-  # Font options:
-  # `external: true` will load this font family from `host` above.
-  # `family: Times New Roman`. Without any quotes.
-  # `size: xx`. Use `px` as unit.
 
   # Global font settings used on <body> element.
   global:
+    # external: true will load this font family from host.
     external: true
     family: Lato
-    size:
 
-  # Font settings for Headlines (h1, h2, h3, h4, h5, h6).
+  # Font settings for Headlines (h1, h2, h3, h4, h5, h6)
   # Fallback to `global` font settings.
   headings:
     external: true
     family:
-    size:
 
-  # Font settings for posts.
+  # Font settings for posts
   # Fallback to `global` font settings.
   posts:
     external: true
     family:
 
-  # Font settings for Logo.
+  # Font settings for Logo
   # Fallback to `global` font settings.
+  # The `size` option use `px` as unit
   logo:
     external: true
     family:
@@ -319,19 +318,29 @@ han: false
 #swiftype_key:
 
 # Baidu Analytics ID
-#baidu_analytics:
+baidu_analytics:
 
 # Duoshuo ShortName
 #duoshuo_shortname:
 
 # Disqus
 disqus:
-  enable: false
-  shortname:
-  count: true
+  enable: true
+  shortname: <your-shortname>
+  count: false
+
+# Disqus APi
+# disqusapi:
+#   enable: true
+#   forum: <your-forum>
+#   site: <your-site>
+#   api: <your-api>
+#   mode: 2
+#   badge: '博主'
+#   timeout: 3000
 
 # Hypercomments
-#hypercomments_id:
+# hypercomments_id: 95583
 
 # changyan
 changyan:
@@ -357,7 +366,7 @@ valine:
 
 # Support for LiveRe comments system.
 # You can get your uid from https://livere.com/insight/myCode (General web site)
-#livere_uid: your uid
+livere_uid:
 
 # Baidu Share
 # Available value:
@@ -382,7 +391,7 @@ valine:
 #google_site_verification:
 
 # Google Analytics
-#google_analytics:
+google_analytics:
 
 # Bing Webmaster tools verification setting
 # See: https://www.bing.com/webmaster/
@@ -449,8 +458,8 @@ rating:
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
   enable: false
-  app_id: #<app_id>
-  app_key: #<app_key>
+  app_id:
+  app_key:
 
 # Show PV/UV of the website/page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi/
@@ -458,15 +467,15 @@ busuanzi_count:
   # count values only if the other configs are false
   enable: false
   # custom uv span for the whole site
-  site_uv: true
+  site_uv: false
   site_uv_header: <i class="fa fa-user"></i>
   site_uv_footer:
   # custom pv span for the whole site
-  site_pv: true
+  site_pv: false
   site_pv_header: <i class="fa fa-eye"></i>
   site_pv_footer:
   # custom pv span for one page only
-  page_pv: true
+  page_pv: false
   page_pv_header: <i class="fa fa-file-o"></i>
   page_pv_footer:
 
@@ -479,7 +488,7 @@ busuanzi_count:
 
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
-baidu_push: false
+baidu_push: true
 
 # Google Calendar
 # Share your recent schedule to others via calendar page
@@ -511,7 +520,7 @@ algolia_search:
 # Local search
 # Dependencies: https://github.com/flashlab/hexo-generator-search
 local_search:
-  enable: false
+  enable: true
   # if auto, trigger search by changing input
   # if manual, trigger search by pressing enter key or search button
   trigger: auto
@@ -560,27 +569,13 @@ tabs:
 #! ---------------------------------------------------------------
 
 # Motion
-motion:
-  enable: true
-  async: false
-  transition:
-    # Transition variants:
-    # fadeIn | fadeOut | flipXIn | flipXOut | flipYIn | flipYOut | flipBounceXIn | flipBounceXOut | flipBounceYIn | flipBounceYOut
-    # swoopIn | swoopOut | whirlIn | whirlOut | shrinkIn | shrinkOut | expandIn | expandOut
-    # bounceIn | bounceOut | bounceUpIn | bounceUpOut | bounceDownIn | bounceDownOut | bounceLeftIn | bounceLeftOut | bounceRightIn | bounceRightOut
-    # slideUpIn | slideUpOut | slideDownIn | slideDownOut | slideLeftIn | slideLeftOut | slideRightIn | slideRightOut
-    # slideUpBigIn | slideUpBigOut | slideDownBigIn | slideDownBigOut | slideLeftBigIn | slideLeftBigOut | slideRightBigIn | slideRightBigOut
-    # perspectiveUpIn | perspectiveUpOut | perspectiveDownIn | perspectiveDownOut | perspectiveLeftIn | perspectiveLeftOut | perspectiveRightIn | perspectiveRightOut
-    post_block: fadeIn
-    post_header: slideDownIn
-    post_body: slideDownIn
-    coll_header: slideLeftIn
+use_motion: false
 
 # Fancybox
 fancybox: true
 
 # Progress bar in the top during page loading.
-pace: false
+pace: true
 # Themes list:
 #pace-theme-big-counter
 #pace-theme-bounce
@@ -626,36 +621,36 @@ vendors:
   _internal: lib
 
   # Internal version: 2.1.3
-  jquery:
+  jquery: //cdn.bootcss.com/jquery/2.1.3/jquery.min.js
 
   # Internal version: 2.1.5
   # See: http://fancyapps.com/fancybox/
-  fancybox:
-  fancybox_css:
+  fancybox: //cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js
+  fancybox_css: //cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css
 
   # Internal version: 1.0.6
   # See: https://github.com/ftlabs/fastclick
-  fastclick:
+  fastclick: //cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js
 
   # Internal version: 1.9.7
   # See: https://github.com/tuupola/jquery_lazyload
-  lazyload:
+  lazyload: //cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js
 
   # Internal version: 1.2.1
   # See: http://VelocityJS.org
-  velocity:
+  velocity: //cdn.bootcss.com/velocity/1.2.1/velocity.min.js
 
   # Internal version: 1.2.1
   # See: http://VelocityJS.org
-  velocity_ui:
+  velocity_ui: //cdn.bootcss.com/velocity/1.2.1/velocity.ui.min.js
 
   # Internal version: 0.7.9
   # See: https://faisalman.github.io/ua-parser-js/
-  ua_parser:
+  ua_parser: //cdn.bootcss.com/UAParser.js/0.7.9/ua-parser.min.js
 
   # Internal version: 4.6.2
   # See: http://fontawesome.io/
-  fontawesome:
+  fontawesome: https://cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css
 
   # Internal version: 1
   # https://www.algolia.com
@@ -705,3 +700,13 @@ images: images
 
 # Theme version
 version: 5.1.2
+
+# 文章末尾添加“本文结束”标记
+passage_end_tag:
+  enabled: true
+
+#sitemap
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
