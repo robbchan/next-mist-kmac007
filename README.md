@@ -10,13 +10,13 @@
 
 ## PC预览
 
-<div style="margin: 0 auto;">
+<div align="center">
   <img src="https://kmac007.b0.upaiyun.com/next-kmac007/pc.png" alt="pc"/>
 </div>
 
 ## 移动端预览
 
-<div style="margin: 0 auto;">
+<div align="center">
   <img src="https://kmac007.b0.upaiyun.com/next-kmac007/iphone6.gif" alt="iphon6"/>
 </div>
 
